@@ -1,0 +1,17 @@
+<% include template/header %>
+<header>
+  <h1>OpenFinancial</h1>
+  <h4>Welcome!</h4>
+</header>
+<section class="panel">
+  <form action="/login" method="post">
+    <input type="text" name="user[name]"
+    placeholder="Name">
+    <input type="text" name="user[email]"
+    placeholder="E-mail">
+    <footer>
+      <button type="submit">Login</button>
+    </footer>
+  </form>
+</section>
+<% include template/footer %>
