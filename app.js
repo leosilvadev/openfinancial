@@ -6,6 +6,7 @@ var express = require('express')
   , methodOverride = require('method-override')
   , app = express();
 
+app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(cookieParser('openfinancial'));
@@ -24,6 +25,6 @@ load('models')
   .then('routes')
   .into(app);
 
-app.listen(3000, function(){
+app.listen(app.get('port'), function(){
   console.log('Openfinancial Online.');
 });
