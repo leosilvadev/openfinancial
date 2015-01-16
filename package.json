@@ -3,9 +3,9 @@
   "description": "Online financial management",
   "version": "0.0.1",
   "private": false,
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "engines": {
     "node": "0.10.x"
