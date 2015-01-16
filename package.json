@@ -3,6 +3,7 @@
   "description": "Online financial management",
   "version": "0.0.1",
   "private": false,
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
