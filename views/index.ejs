@@ -1,17 +1,36 @@
-<% include template/header %>
-<header>
-  <h1>OpenFinancial</h1>
-  <h4>Welcome!</h4>
-</header>
+<% include template/offline/header %>
+
+<style>
+  nav{
+    max-width:600px !important;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .panel{
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  footer.row{
+    max-width:600px;
+  }
+</style>
+
 <section class="panel">
+  <header>
+    <h1>Login</h1>
+  </header>
   <form action="/login" method="post">
-    <input type="text" name="user[name]"
-    placeholder="Name">
-    <input type="text" name="user[email]"
-    placeholder="E-mail">
+    <label for="username">Username: </label>
+    <input id="username" type="text" name="user[username]" placeholder="Name" required>
+    <label for="password">Password: </label>
+    <input id="password" type="password" name="user[password]" placeholder="Password" required>
     <footer>
-      <button type="submit">Login</button>
+      <button type="submit" class="button small">Login</button>
     </footer>
   </form>
 </section>
-<% include template/footer %>
+
+<% include template/offline/footer %>

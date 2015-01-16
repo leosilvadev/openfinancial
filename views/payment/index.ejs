@@ -1,17 +1,92 @@
-<% include ../template/header %>
-<header>
-  <h1>OpenFinancial</h1>
-  <h4>Welcome!</h4>
-</header>
-<section class="panel">
+<% include ../template/online/header %>
+
+<style>
+  #modal-register{
+    width:500px;
+  }
+</style>
+
+<section class="panel row">
+  <header>
+    <h1>OpenFinancial</h1>
+  </header>
   <table width="100%">
     <thead>
       <tr>
-        <th width="50%">Description</th>
-        <th width="20%">Value</th>
+        <th width="35%">Description</th>
+        <th width="15%">Price</th>
         <th width="30%">Date</th>
+        <th width="10%">Edit</th>
+        <th width="10%">Delete</th>
       </tr>
     </thead>
+    <tbody>
+      <% if (payments && payments.length) {%>
+        <% payments.forEach(function(payment, index){ %>
+          <tr>
+            <td><%- payment.description %></td>
+            <td>$ <%- payment.price %></td>
+            <td><%- payment.date %></td>
+            <td>
+              <a href="#" class="edit" data-id="<%- payment.id %>">
+                <span class="fi-pencil"></span>
+              </a>
+            </td>
+            <td>
+              <a href="#" class="delete" data-id="<%- payment.id %>">
+                <span class="fi-trash"></span>
+              </a>
+            </td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="5">No payment registered</td>
+        </tr>
+      <% } %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5">
+          <button id="btn-new-payment" type="button" class="button small right">
+            <span class="fi-plus"></span>
+            New
+          </button>
+        </td>
+      </tr>
+    </tfoot>
   </table>
 </section>
-<% include ../template/footer %>
+
+<script>
+  $(function(){
+    $(document).foundation('reveal', 'reflow');
+
+    $('#btn-new-payment').on('click', function(){
+      $('#form-payment input').val('');
+      $('#modal-register').foundation('reveal', 'open');
+    });
+
+    $('.edit').on('click', function(){
+      var id = $(this).data('id');
+      $.get('payment/' + id)
+        .success(function(payment){
+          $('#id').val(payment.id);
+          $('#description').val(payment.description);
+          $('#price').val(payment.price);
+          $('#date').val(payment.date);
+          $('#modal-register').foundation('reveal', 'open');
+        });
+    });
+
+    $('.delete').on('click', function(){
+      var id = $(this).data('id');
+      $('#form-payment').attr('action', '/payment/'+id+'?_method=delete');
+      $('#modal-delete').foundation('reveal', 'open');
+    });
+  });
+</script>
+
+<% include ../template/online/footer %>
+<% include modal-register %>
+<% include modal-delete %>

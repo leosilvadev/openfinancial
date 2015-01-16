@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>OpenFinancial</title>
+    <style>
+      @import url('zurb/css/foundation.css');
+      @import url('zurb/icons/foundation-icons.css');
+      form > footer {text-align:right;}
+      body > footer {
+        font-size:2em;
+        text-align:center;
+      }
+      nav {
+        margin-bottom:10px !important;
+      }
+      footer.row{
+        background-color:#333333;
+        color:white;
+        font-size: 1em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    </style>
+    <script src="zurb/js/vendor/jquery.js"></script>
+    <script src="zurb/js/foundation.min.js"></script>
+  </head>
+  <body>
+    <nav class="top-bar docs-bar hide-for-small row">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">OpenFinancial</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="divider"></li>
+          <li>
+            <a href="/payment" class="">Payments</a>
+          </li>
+          <li class="divider"></li>
+          <li class="has-form">
+            <a href="/logout" class="small button">
+              <span class="fi-home"></span>
+              Logout
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>

@@ -1,0 +1,22 @@
+<div id="modal-register" class="reveal-modal" data-reveal>
+  <h2>Payment Informations</h2>
+  <form id="form-payment" action="/payment" method="post">
+
+    <input id="id" type="hidden" name="payment[id]"/>
+
+    <label for="description">Description: </label>
+    <input id="description" type="text" name="payment[description]" required/>
+
+    <label for="price">Price: </label>
+    <input id="price" type="number" name="payment[price]" required/>
+
+    <label for="date">Payment Date: </label>
+    <input id="date" type="date" name="payment[date]" required/>
+
+    <a class="close-reveal-modal">&#215;</a>
+    <button type="submit" class="button small right">
+      <span class="fi-save"></span>
+      Save
+    </button>
+  </form>
+</div>

@@ -2,16 +2,15 @@ module.exports = function(app){
   var ApplicationController = {
 
     index: function(req, res) {
-      console.log('index');
       res.render('index');
     },
 
     login: function(req, res) {
-      console.log('login');
-      var email = req.body.user.email;
-      var name = req.body.user.name;
-      if ( email && name ) {
+      var username = req.body.user.username;
+      var password = req.body.user.password;
+      if ( username && password ) {
         var user = req.body.user;
+        user.payments = [];
         req.session.logged_user = user;
         res.redirect('/payment');
       } else {
@@ -20,7 +19,8 @@ module.exports = function(app){
     },
 
     logout: function(req, res) {
-
+      req.session.logged_user = null;
+      res.redirect('/');
     }
 
   };
