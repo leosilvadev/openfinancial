@@ -1,8 +1,23 @@
+var models  = require('../models');
+
 module.exports = function(app) {
+
+  var Payment = models.Payment;
 
   var PaymentService = {
     save: function(payment){
-
+      Payment.build({
+        description: payment.description,
+        price: payment.price
+      })
+      .save()
+      .complete(function(err) {
+        if (!!err) {
+          console.log('The instance has not been saved:', err)
+        } else {
+          console.log('We have a persisted instance now')
+        }
+      });
     },
 
     findIn: function(id, payments){
@@ -13,6 +28,8 @@ module.exports = function(app) {
       }
     }
 
-  }
+  };
+
+  return PaymentService;
 
 };
