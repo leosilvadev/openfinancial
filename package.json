@@ -3,11 +3,16 @@
   "description": "Online financial management",
   "version": "0.0.1",
   "private": false,
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
   "engines": {
     "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leosilvadev/openfinancial"
   },
   "dependencies": {
     "body-parser": "~1.10.1",
