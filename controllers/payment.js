@@ -1,5 +1,7 @@
 module.exports = function(app){
 
+  var service = app.services.payment;
+
   var findPayment = function(id, payments){
     for (var index in payments) {
       if (payments[index].id == id){
