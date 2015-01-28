@@ -35,12 +35,10 @@ module.exports = function(app) {
           }
         });
       sequelize
-        .sync({force:false})
+        .sync({force:true})
         .complete(function(err) {
           if (!!err) {
             console.log('An error occurred while creating the table:', err)
-          } else {
-            console.log('It worked!')
           }
         })
     }
