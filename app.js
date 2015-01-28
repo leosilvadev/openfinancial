@@ -20,7 +20,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public'));
 
-load('services')
+load('models/schema.js')
+  .then('middlewares')
   .then('controllers')
   .then('routes')
   .into(app);
