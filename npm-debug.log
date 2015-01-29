@@ -1,14 +1,12 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/home/leonardo/dev/libs/node-v0.10.35/bin/node',
 1 verbose cli   '/home/leonardo/dev/libs/node-v0.10.35/bin/npm',
-1 verbose cli   'update',
-1 verbose cli   '--latest',
-1 verbose cli   '--save' ]
+1 verbose cli   'update' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.35
 4 info outdated updating undefined
 5 error Failed to parse json
-5 error Unexpected string
+5 error Unexpected token }
 6 error File: /home/leonardo/dev/workspaces/node/openfinancial/package.json
 7 error Failed to parse package.json data.
 7 error package.json must be actual JSON, not just JavaScript.
@@ -16,7 +14,7 @@
 7 error This is not a bug in npm.
 7 error Tell the package author to fix their package.json file. JSON.parse
 8 error System Linux 3.13.0-24-generic
-9 error command "/home/leonardo/dev/libs/node-v0.10.35/bin/node" "/home/leonardo/dev/libs/node-v0.10.35/bin/npm" "update" "--latest" "--save"
+9 error command "/home/leonardo/dev/libs/node-v0.10.35/bin/node" "/home/leonardo/dev/libs/node-v0.10.35/bin/npm" "update"
 10 error cwd /home/leonardo/dev/workspaces/node/openfinancial
 11 error node -v v0.10.35
 12 error npm -v 1.4.28
